@@ -99,8 +99,9 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="max-w-md w-full space-y-8 p-8">
         <div>
-          <h1 className="text-center text-3xl font-bold text-gray-900">
-            Quickly
+          <h1 className="text-center text-3xl font-bold">
+            <span className="text-gray-900">Black</span>
+            <span className="text-primary">Sync</span>
           </h1>
           <h2 className="mt-2 text-center text-lg text-gray-600">
             {heading}

@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       colors: {
         // primary color used throughout the app; can be changed globally
-        primary: '#14b8a6',
+        primary: '#ea580c',
       },
       fontFamily: {
         sans: ['Figtree', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont',

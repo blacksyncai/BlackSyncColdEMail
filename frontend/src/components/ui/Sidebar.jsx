@@ -136,9 +136,12 @@ export default function Sidebar({ collapsed, onToggle }) {
         }`}
         title="Home"
       >
-        <img src={logo} alt="Quickly logo" className="h-8 w-8" />
+        <img src={logo} alt="BlackSync logo" className="h-8 w-8" />
         {!collapsed && (
-          <span className="text-primary font-extrabold text-xl">Quickly</span>
+          <span className="font-extrabold text-xl">
+            <span className="text-gray-900 dark:text-gray-100">Black</span>
+            <span className="text-primary">Sync</span>
+          </span>
         )}
       </NavLink>
       <div className="flex flex-col gap-2">
