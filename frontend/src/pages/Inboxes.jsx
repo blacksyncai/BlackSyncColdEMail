@@ -350,7 +350,7 @@ function InboxTrackingOptions({
         <div className="ml-6 min-w-0 max-w-full border-l-2 border-gray-200 pl-3 py-0.5">
           <CollapsibleInfo>
             <p>
-              Open, click, and unsubscribe links use your Quickly app URL{' '}
+              Open, click, and unsubscribe links use your BlackSync app URL{' '}
               <span className="text-gray-500 font-mono break-all">({hostHint})</span>. No Beacon service and no extra DNS records are required.
             </p>
           </CollapsibleInfo>
@@ -409,7 +409,7 @@ function InboxTrackingOptions({
           <CollapsibleInfo>
             <p className="font-medium text-gray-700">How Beacon works</p>
             <p>
-              Run the Beacon service on the HTTPS hostname you want for tracking links. While Quickly is not connected yet, open Beacon&apos;s root URL in a browser and copy the <strong>setup URL</strong> (it includes{' '}
+              Run the Beacon service on the HTTPS hostname you want for tracking links. While BlackSync is not connected yet, open Beacon&apos;s root URL in a browser and copy the <strong>setup URL</strong> (it includes{' '}
               <code className="bg-gray-100 px-0.5 rounded">?token=</code>
               ). Paste it above and click Connect. On Beacon, set{' '}
               <code className="bg-gray-100 px-0.5 rounded">BEACON_PUBLIC_BASE_URL</code>
@@ -420,7 +420,7 @@ function InboxTrackingOptions({
                 href={BEACON_SETUP_DOCS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-700 hover:underline break-all"
+                className="text-orange-700 hover:underline break-all"
               >
                 Full setup guide (Quickly repo → INSTALL.md)
               </a>
@@ -478,7 +478,7 @@ function InboxTrackingOptions({
             )}
             <CollapsibleInfo>
               <p className="font-medium text-gray-700">DNS setup (CNAME)</p>
-              <p>Add a <code>CNAME</code> at your DNS host pointing your tracking hostname at this Quickly server:</p>
+              <p>Add a <code>CNAME</code> at your DNS host pointing your tracking hostname at this BlackSync server:</p>
               <pre className="bg-white border rounded p-2 overflow-x-auto whitespace-pre-wrap break-all text-gray-700 text-[11px]">
                 {`${(trackingDomain || '').trim() || 'mail.yourdomain.com'}  CNAME  ${cnameTarget || 'your-app-host'}.`}
               </pre>
@@ -1265,16 +1265,16 @@ export default function Inboxes() {
                 <button
                   key={inbox.id}
                   onClick={() => { if (isSelected) { tryCloseSidebar(); } else { setSelectedInbox(inbox); } }}
-                  className={`w-full text-left rounded-xl border px-5 py-4 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-blue-400 ${
+                  className={`w-full text-left rounded-xl border px-5 py-4 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-orange-400 ${
                     isSelected
-                      ? 'border-blue-400 bg-blue-50 shadow-sm'
+                      ? 'border-orange-400 bg-orange-50 shadow-sm'
                       : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm'
                   }`}
                 >
                   <div className="flex items-center justify-between gap-4">
                     {/* Left: avatar + email */}
                     <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-sm font-semibold shrink-0">
+                      <div className="w-9 h-9 rounded-full bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center text-white text-sm font-semibold shrink-0">
                         {avatarLetter}
                       </div>
                       <div className="min-w-0">
@@ -1549,7 +1549,7 @@ export default function Inboxes() {
                   {/* Panel header */}
                   <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
                     <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-sm font-semibold shrink-0">
+                      <div className="w-9 h-9 rounded-full bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center text-white text-sm font-semibold shrink-0">
                         {(selectedInbox.email || selectedInbox.display_name || 'I')[0].toUpperCase()}
                       </div>
                       <div className="min-w-0">
@@ -1604,7 +1604,7 @@ export default function Inboxes() {
                       </div>
                       <div className="w-full bg-gray-100 rounded-full h-1.5">
                         <div
-                          className="bg-blue-500 h-1.5 rounded-full transition-all"
+                          className="bg-orange-500 h-1.5 rounded-full transition-all"
                           style={{ width: `${Math.min(100, ((selectedInbox.sent_today || 0) / (selectedInbox.effective_max_per_day || selectedInbox.max_emails_per_day || 1)) * 100)}%` }}
                         />
                       </div>

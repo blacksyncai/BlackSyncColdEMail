@@ -226,7 +226,7 @@ export default function Campaigns() {
                         </span>
                       ) : isCompleted ? (
                         <span>
-                          <Link to={`/campaigns/${c.id}`} className="text-blue-500">{c.name}</Link>{' '}
+                          <Link to={`/campaigns/${c.id}`} className="text-orange-600">{c.name}</Link>{' '}
                           <span className="inline-block text-blue-600 bg-blue-100 px-1 py-0.5 text-xs font-bold rounded">DONE</span>
                         </span>
                       ) : (
