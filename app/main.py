@@ -310,7 +310,10 @@ async def index(request: Request):
             _res = await _db.execute(_select(Inbox).where(Inbox.tracking_domain == host))
             if _res.scalar_one_or_none() is not None:
                 return JSONResponse({"ts": None, "ref": 0}, status_code=200)
-    return FileResponse(str(BASE_DIR / "frontend" / "dist" / "index.html"))
+    return FileResponse(
+        str(BASE_DIR / "frontend" / "dist" / "index.html"),
+        headers={"Cache-Control": "no-cache, no-store, must-revalidate"},
+    )
 
 
 import re as _re
@@ -366,7 +369,10 @@ async def spa(request: Request, full_path: str):
         or request.url.path.startswith("/c/")
     ):
         raise HTTPException(status_code=404)
-    return FileResponse(str(BASE_DIR / "frontend" / "dist" / "index.html"))
+    return FileResponse(
+        str(BASE_DIR / "frontend" / "dist" / "index.html"),
+        headers={"Cache-Control": "no-cache, no-store, must-revalidate"},
+    )
 
 
 def _register_mcp_http_routes() -> None:
